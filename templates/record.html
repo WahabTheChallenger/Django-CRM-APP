@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Customer Record</h1>
+<br>
+<div class="card">
+    <h4 class="card-header bg-dark text-white">
+        <td>{{customer_record.first_name}} {{customer_record.last_name}}</td> 
+    </h4>
+    <div class="card-body">
+      <p class="card-text">
+    <strong>ID:  </strong>{{customer_record.id}}</p>
+          <p class="card-text">
+            <strong>Email:  </strong>{{customer_record.email}}</p>
+          <p class="card-text">
+            <strong>Phone:  </strong>{{customer_record.phone}}</p>
+          <p class="card-text">
+            <strong>City:  </strong>{{customer_record.city}}</p>
+          <p class="card-text">
+            <strong>State:  </strong>{{customer_record.state}}</p>
+          <p class="card-text">
+            <strong>Zipcode:  </strong>{{customer_record.zipcode}}</p>
+          <p class="card-text">
+            <strong>Created at:  </strong>{{customer_record.created_at}}</p> 
+          <p class="card-text">
+            <strong>Adress:  </strong>{{customer_record.address}}</p>
+    </div>
+  </div>
+<br><br>
+    
+<a class='fs-4 text-decoration-none btn btn-secondary', href="{% url 'home' %}"><strong>Back</strong></a>
+<a class='fs-4 text-decoration-none btn btn-danger', href="{% url 'delete_record' customer_record.id %}"><strong>Delete</strong></a>
+<a class='fs-4 text-decoration-none btn btn-primary', href="{% url 'update_record' customer_record.id %}"><strong>Update</strong></a>
+{% endblock content %}
+
+
+
